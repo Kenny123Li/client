@@ -4,9 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-/api/node_modules
-/node-postgres/node_modules
-/react-postgres/node_modules
 
 # testing
 /coverage
