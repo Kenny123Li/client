@@ -17,7 +17,7 @@ const pool = new Pool({
 });
 
 pool.query('select * from testing123', (err, res) => {
-    console.log(err, res)
+    //console.log(err, res)
     pool.end()
 })
 
