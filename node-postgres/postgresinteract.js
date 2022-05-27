@@ -12,7 +12,7 @@ pool.connect()
 const getMerchants = () => {
     return new Promise(function(resolve, reject) {
       pool.query('select * from testing123', (error, results) => {
-        console.log(error, results)
+        //console.log(error, results)
         if (error) {
           //alert("Did not get any merchants!")
           reject(error)
@@ -32,14 +32,31 @@ const getMerchants = () => {
       })
     })
   }
-  const deleteMerchant = () => {
+
+  // const deleteMerchant = () => {
+  //   return new Promise(function(resolve, reject) {
+  //     const username = parseInt(express.request.params.username)
+  //     console.log("username we are trying to delete: "+ username);
+  //     pool.query('DELETE FROM testing123 WHERE username = $1', [username], (error, results) => {
+  //       console.log(error);
+  //       if (error) {
+  //         reject(error)
+  //       }
+  //       resolve(`Merchant deleted with username: ${user}`)
+  //     })
+  //   })
+  // }
+
+  const deleteMerchant = (username_passed) => {
     return new Promise(function(resolve, reject) {
-      const username = parseInt(request.params.username)
+      const username = username_passed;
+      console.log("username we are trying to delete: "+ username);
       pool.query('DELETE FROM testing123 WHERE username = $1', [username], (error, results) => {
+        console.log(error);
         if (error) {
           reject(error)
         }
-        resolve(`Merchant deleted with username: ${user}`)
+        resolve(`Merchant deleted with username: ${username}`)
       })
     })
   }
